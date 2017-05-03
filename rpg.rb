@@ -7,12 +7,12 @@
 require_relative "hero"
 
 
-
 puts "Welcome to an adventure"
 print "What is your name ? > "
-hero = gets.chomp
-puts "Hello #{hero}"
+hero = Hero.new(gets.chomp)
+puts "Hello #{hero.name}"
+puts "Your starting stats are"
+puts "Health ....."
 print "For a list of commands type help > "
 prompt = gets.chomp.downcase
-hero = Hero.new
 hero.help_commands(prompt)

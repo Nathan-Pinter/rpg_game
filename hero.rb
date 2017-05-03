@@ -2,6 +2,12 @@
 
 class Hero
   
+  attr_accessor :name
+  
+  def initialize(name)
+    @name = name
+  end
+  
   def stats
     health = 1
     attack = 1
