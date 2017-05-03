@@ -3,15 +3,17 @@
 class Hero
   
   attr_accessor :name
-  
   def initialize(name)
     @name = name
   end
   
   def stats
-    health = 1
-    attack = 1
-    defence = 1
+   health = 1
+   attack_power = 1
+   defence = 1
+   puts "Health: #{health}"
+   puts "Attack Power: #{attack_power}"
+   puts "Defence: #{defence}"
   end
   
   def help_commands(prompt)
