@@ -2,31 +2,22 @@
 
 class Hero
   
-  attr_accessor :name
-  def initialize(name)
+attr_accessor :name, :hero_health, :hero_attack, :hero_defence
+attr_accessor :x_coord, :y_coord
+
+  def initialize
     @name = name
+    @hero_health = 10
+    @hero_attack = 1
+    @hero_defence = 0
+    @x_coord, @y_coord = 0, 0
   end
   
-  def stats
-   health = 1
-   attack_power = 1
-   defence = 1
-   puts "Health: #{health}"
-   puts "Attack Power: #{attack_power}"
-   puts "Defence: #{defence}"
-  end
-  
-  def help_commands(prompt)
-    
-    if prompt == "help"
-      puts "Possible commands are"
-      puts "go North"
-      puts "go South"
-      puts "go East"
-      puts "Attack"
-    else 
-      puts "That is not a valid command"
-    end
-    
+  def help_commands
+    puts "Possible commands are"
+    puts "go North"
+    puts "go South"
+    puts "go East"
+    puts "Attack"
   end
 end
