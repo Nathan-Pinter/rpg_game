@@ -19,5 +19,6 @@ attr_accessor :x_coord, :y_coord
     puts "go South"
     puts "go East"
     puts "Attack"
+    puts "End Game"
   end
 end

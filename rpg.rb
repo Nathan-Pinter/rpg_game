@@ -23,11 +23,16 @@ def take_action(prompt)
   elsif prompt == "go west"
     puts "You have chosen to go West"
     @world.move_west(@hero)
+  elsif prompt == "end game"
+    puts "I'm sorry you have to leave"
+    puts "GAME OVER"
+    @hero.hero_health = 0
   else
     puts "That is a wrong selection, Please try again"       
   end
 end
 
+#---------------------Start-------------------
 @world = Map.new
 @hero = Hero.new
 
@@ -36,12 +41,16 @@ print "what is your name ? > "
 player = gets.chomp
 puts "Hello #{player}"
 puts " "
-puts "Your stats are the following"
-puts "Health: #{@hero.hero_health}"
-puts "Attack power: #{@hero.hero_attack}"
-puts "Defence: #{@hero.hero_defence}"
-puts " "
-print "What would you like to do ? > "
-prompt = gets.chomp
-take_action(prompt)
-puts "Your new spot is #{@hero.y_coord}, #{@hero.x_coord}"
+
+while @hero.hero_health > 0
+  puts "Your stats are the following"
+  puts "Health: #{@hero.hero_health}"
+  puts "Attack power: #{@hero.hero_attack}"
+  puts "Defence: #{@hero.hero_defence}"
+  puts " "
+  print "What would you like to do ? > "
+  prompt = gets.chomp
+  take_action(prompt)
+  puts "Your new spot is #{@hero.y_coord}, #{@hero.x_coord}"
+  @hero.hero_health -= 1
+end
