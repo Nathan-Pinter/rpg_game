@@ -5,20 +5,21 @@ To play the game please run rpg.rb
 
 Working
 __________
-Enter your name
+Enter your Hero name
 
 View help commands with command help
 
-Walk around map, but take 1 damage each move
+Walk around map. 50% chance a monster will attack you.
+
+Combat is instant right now. loose 10 HP and Game Over
 
 quit the game with end game command
 
 
 To Do List
 ________________
-Setup random encounter
 
-battle system
+battle system - almost complete
 
 Items
 

@@ -10,24 +10,24 @@ class Map
     @rooms = Array.new(Map_height, Array.new(Map_width))
   end
   
-  def move_north(move)
-    move.y_coord -= 1 if move.y_coord > 0
+  def move_north(move_player)
+    move_player.y_coord -= 1 if move_player.y_coord > 0
   end
   
-  def move_south(move)
-    move.y_coord += 1 if move.y_coord < Map_height - 1
+  def move_south(move_player)
+    move_player.y_coord += 1 if move_player.y_coord < Map_height - 1
   end
   
-  def move_east(move)
-    move.x_coord += 1 if move.x_coord < Map_width - 1
+  def move_east(move_player)
+    move_player.x_coord += 1 if move_player.x_coord < Map_width - 1
   end
   
-  def move_west(move)
-    move.x_coord -= 1 if move.x_coord > 0
+  def move_west(move_player)
+    move_player.x_coord -= 1 if move_player.x_coord > 0
   end
   
-  def get_room_of(move)
-    @rooms[move.x_coord][move.y_coord] ||= Room.new
+  def get_room_of(move_player)
+    @rooms[move_player.x_coord][move_player.y_coord] ||= Room.new
   end
   
 end

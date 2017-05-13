@@ -7,6 +7,7 @@
 
 require_relative "hero"
 require_relative "map"
+require_relative "monster"
 
 def take_action(prompt)
   if prompt == "help"
@@ -23,12 +24,22 @@ def take_action(prompt)
   elsif prompt == "go west"
     puts "You have chosen to go West"
     @world.move_west(@hero)
+  elsif prompt == "attack"
+    @monster.combat(@hero)
   elsif prompt == "end game"
     puts "I'm sorry you have to leave"
-    puts "GAME OVER"
     @hero.hero_health = 0
   else
     puts "That is a wrong selection, Please try again"       
+  end
+end
+
+def random_monster(random_number)
+  if random_number > 5
+    @monster = Monster.new
+    puts "A monster blocks your way"
+    puts " "
+    @monster.combat(@hero)
   end
 end
 
@@ -42,7 +53,7 @@ player = gets.chomp
 puts "Hello #{player}"
 puts " "
 
-while @hero.hero_health > 0
+while @hero.hero_alive
   puts "Your stats are the following"
   puts "Health: #{@hero.hero_health}"
   puts "Attack power: #{@hero.hero_attack}"
@@ -50,7 +61,11 @@ while @hero.hero_health > 0
   puts " "
   print "What would you like to do ? > "
   prompt = gets.chomp
+  puts "---------------"
   take_action(prompt)
-  puts "Your new spot is #{@hero.y_coord}, #{@hero.x_coord}"
-  @hero.hero_health -= 1
+  puts "Your current position is #{@hero.y_coord}, #{@hero.x_coord}"
+  random_monster(rand(11))
 end
+puts "#{player} has #{@hero.hero_health} Health"
+puts "Your Hero has fallen"
+puts "Game OVER"
