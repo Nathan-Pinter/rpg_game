@@ -10,14 +10,14 @@ class Hero
   
   def help_commands(prompt)
     
-    if prompt == "help"
-      puts "Possible commands are"
-      puts "go North"
-      puts "go South"
-      puts "go East"
-      puts "Attack"
+    if prompt == 'help'
+      puts 'Possible commands are'
+      puts 'go North'
+      puts 'go South'
+      puts 'go East'
+      puts 'Attack'
     else 
-      puts "That is not a valid command"
+      puts 'That is not a valid command'
     end
     
   end
