@@ -24,11 +24,11 @@ attr_accessor :x_coord, :y_coord
   end
   
   def help_commands
-    puts "Possible commands are"
-    puts "go North"
-    puts "go South"
-    puts "go East"
-    puts "Attack"
-    puts "End Game"
+    puts 'Possible commands are'
+    puts 'go North'
+    puts 'go South'
+    puts 'go East'
+    puts 'Attack'
+    puts 'End Game'
   end
 end

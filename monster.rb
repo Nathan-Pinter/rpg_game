@@ -1,4 +1,4 @@
-require_relative "hero"
+require_relative 'hero'
 
 class Monster
    attr_accessor :monster_health, :monster_attack, :monster_defence
